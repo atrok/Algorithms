@@ -51,5 +51,18 @@ public class FileReader {
 	public String[] getResult(){
 		return result.toArray(new String[result.size()]);
 		}
+	
+	public int[] getResultInt(){
+		int[] res=new int[result.size()];
+		for (int i=0;i<result.size();i++)
+			res[i]=Integer.valueOf(result.get(i));
+		return res;
+	}
 
+	public long[] getResultLong(){
+		long[] res=new long[result.size()];
+		for (int i=0;i<result.size();i++)
+			res[i]=Long.valueOf(result.get(i));
+		return res;
+	}
 }
