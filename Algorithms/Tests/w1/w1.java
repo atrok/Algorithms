@@ -4,13 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import InverseCount.FileReader;
+import utils.FileReader;
 import InverseCount.InverseCount;
 import InverseCount.Solution;
 
 public class w1 {
 	
 	String path = "C:\\Users\\atrok\\Documents\\Coursera\\Algorithms 1\\HomeTask\\w1\\IntegerArray.txt";
+	
 	
 	@Test
 	public void testFileReader() {
