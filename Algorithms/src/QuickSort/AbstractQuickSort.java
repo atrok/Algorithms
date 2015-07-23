@@ -2,27 +2,35 @@ package QuickSort;
 
 import java.util.Random;
 
-public class QuickSort {
+public abstract class AbstractQuickSort {
 	
-	private int[] result;
-	private Random r=new Random();
+	protected int[] result;
+	protected Random r=new Random();
+	protected long comparison=0;
 	
-	public QuickSort(int[] arr){
+	public AbstractQuickSort(int[] arr){
 		result=new int[arr.length];
 		result=arr;
-		run(result.length,0,result.length-1);
 		
 	}
 	
+	public long start(){
+		run(result.length,0,result.length-1);
+		
+		return comparison;
+	}
+	
 	public int[] getSortedArray(){
+		
 		return result;
 	}
 	
 	private void run(int length, int from, int to){
 		if (length>1){
 
+		comparison+=length-1;
 		
-		int p=from+choosePivot(length);// get index of pivot
+		int p=from+choosePivot(length,from,to);// get index of pivot
 		if (p!=from)
 			swapElement(p,from);// set pivot at the beginning of the array slice
 		int i=getPartition(result[from],from,to); // sorting array with 
@@ -40,9 +48,8 @@ public class QuickSort {
 		result[to]=a;
 		
 	}
-	private int choosePivot(int length){ // here we return an index of element in the array that we deem as a pivot, not the element itself
-		return 0;//r.nextInt(length-1);// since arrays are numerated from 0 to length-1
-	}
+	abstract protected int choosePivot(int length,int from, int to); // here we return an index of element in the array that we deem as a pivot, not the element itself
+
 	
 	private int getPartition(int p, int from, int to){
 		int i=from+1;
