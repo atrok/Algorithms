@@ -32,7 +32,7 @@ public abstract class AbstractQuickSort {
 		
 		int p=from+choosePivot(length,from,to);// get index of pivot
 		if (p!=from)
-			swapElement(p,from);// set pivot at the beginning of the array slice
+			swapElement(p,from,result);// set pivot at the beginning of the array slice
 		int i=getPartition(result[from],from,to); // sorting array with 
 		
 		run(i-from,from,i-1);
@@ -40,13 +40,13 @@ public abstract class AbstractQuickSort {
 		
 		}
 	}
-	
-	private void swapElement(int from, int to){
-		int a=result[from];
-		int b=result[to];
-		result[from]=b;
-		result[to]=a;
-		
+	/* by default swap */
+	protected int[] swapElement(int from, int to, int[] optionalArray){
+		int a=optionalArray[from];
+		int b=optionalArray[to];
+		optionalArray[from]=b;
+		optionalArray[to]=a;
+		return optionalArray;
 	}
 	abstract protected int choosePivot(int length,int from, int to); // here we return an index of element in the array that we deem as a pivot, not the element itself
 
@@ -56,14 +56,14 @@ public abstract class AbstractQuickSort {
 		for (int j=from+1;j<=to;j++){
 			
 			if(p>result[j]){//p is a pivot, and 'from' is expected to be an index of pivot in 'arr' 
-				swapElement(j,i);
+				swapElement(j,i,result);
 				i++;
 			}
 			
 		}
 		
 		if (from!=(i-1))// to avoid swapping elements located on the same place
-			swapElement(from,i-1);
+			swapElement(from,i-1,result);
 		return i-1;// <--returning position of pivot in partitioned array
 		
 	}

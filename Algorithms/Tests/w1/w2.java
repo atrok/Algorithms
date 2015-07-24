@@ -20,11 +20,6 @@ public class w2 {
 	FileReader fr = new FileReader(path2, false);
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testCase1() {
 
 		FileReader fr = new FileReader(path2, false);
