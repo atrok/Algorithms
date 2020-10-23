@@ -5,11 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch bfs test",
-      "program": "${workspaceFolder}/JS/Tests/bfs.test.js",
+      "type": "node",
       "request": "launch",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "pwa-node"
+      "name": "Launch bfs test",
+      "program": "${workspaceFolder}/Tests/bfs.test.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch test hashmap",
+      "program": "${workspaceFolder}/testHashmap.js"
     }
   ]
 }
