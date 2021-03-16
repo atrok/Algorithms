@@ -5,6 +5,34 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch sortLinkedList",
+      "program": "${workspaceFolder}/Algorithms/sortLinkedList.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Launch QuickSort test",
+      "program": "${workspaceFolder}/Tests/quicksort.test.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Launch MaxProfit test",
+      "program": "${workspaceFolder}/Tests/maxProfit.test.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Launch MergeSort test",
+      "program": "${workspaceFolder}/Tests/mergeSort.test.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
       "name": "Launch matrixRotate test",
       "program": "${workspaceFolder}/Tests/matrixRotate.test.js",
       "request": "launch",
