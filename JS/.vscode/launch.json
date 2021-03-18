@@ -5,6 +5,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch Rotated Array test",
+      "program": "${workspaceFolder}/Tests/rotatedArray.test.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Launch Binary Search Rotated test",
+      "program": "${workspaceFolder}/Tests/binarySearchRotated.test.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
       "name": "Launch sortLinkedList",
       "program": "${workspaceFolder}/Algorithms/sortLinkedList.js",
       "request": "launch",
